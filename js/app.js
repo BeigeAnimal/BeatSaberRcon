@@ -14,11 +14,6 @@ app.config(function($routeProvider) {
     templateUrl: "html/console.html",
     Nav: true
   });
-  $routeProvider.when("/:address/chat", {
-    Title: "Chat",
-    templateUrl: "html/chat.html",
-    Nav: true
-  });
   $routeProvider.when("/:address/playerlist", {
     Title: "Player List",
     templateUrl: "html/playerlist.html",

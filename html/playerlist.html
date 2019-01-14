@@ -18,11 +18,7 @@
 							<th>Actions</th>
 
 							<th ng-click="Order( 'DisplayName' )" ng-class="SortClass( 'DisplayName' )">Username</th>
-							<th class="text-right" ng-click="Order( 'SteamID' )" ng-class="SortClass( 'SteamID' )">Steam ID</th>
-							<th class="text-right" ng-click="Order( 'VoiationLevel' )" ng-class="SortClass( 'VoiationLevel' )">Violation Level</th>
-							<th class="text-right" ng-click="Order( 'Address' )" ng-class="SortClass( 'Address' )">Address</th>
-							<th class="text-right" ng-click="Order( 'Ping' )" ng-class="SortClass( 'Ping' )">Ping</th>
-							<th class="text-right" ng-click="Order( 'ConnectedSeconds' )" ng-class="SortClass( 'ConnectedSeconds' )">Duration</th>
+							<th class="text-right" ng-click="Order( 'SteamID' )" ng-class="SortClass( 'SteamID' )">Steam/Oculus ID</th>
 						</tr>
 					</thead>
 					<tr ng-repeat="line in Players | orderBy: OrderBy | filter:FilterText" href="#/{{address}}/player/{{line.SteamID}}/">
@@ -34,17 +30,10 @@
 							  	</button>
 							  	<ul class="dropdown-menu">
 								    <li>
-								    	<a href="http://www.steamcommunity.com/profiles/{{line.SteamID}}" target="_blank">
+								    	<a href="https://www.steamcommunity.com/profiles/{{line.SteamID}}" target="_blank">
 											<span class="glyphicon glyphicon-info-sign"></span>
 											Steam Profile
 										</a>
-								    </li>
-								    <li class="divider"></li>
-								    <li>
-								    	<a href ng-click="KickPlayer(line.SteamID)">
-								    		<span class="glyphicon glyphicon-trash"></span>
-								    		Kick
-								    	</a>
 								    </li>
 								</ul>
 							</div>
@@ -57,23 +46,6 @@
 						<td style="text-align: right">
 							<a href="#/{{address}}/player/{{line.SteamID}}/">{{line.SteamID}}</a>
 						</td>
-
-						<td class="text-right" ng-class="{fade: line.VoiationLevel == 0 }">
-							{{line.VoiationLevel}}
-						</td>
-
-						<td class="text-right">
-							{{line.Address}}
-						</td>
-
-						<td class="text-right">
-							{{line.Ping}}
-						</td>
-
-						<td class="text-right">
-							{{line.ConnectedSeconds | SecondsToDuration}}
-						</td>
-
 						<md-divider></md-divider>
 					</tr>
 				</table>

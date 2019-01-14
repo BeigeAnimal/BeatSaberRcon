@@ -1,12 +1,12 @@
 {
-  "name": "webrcon",
+  "name": "BeatSaberRcon",
   "description": "Game server Rcon, using websockets",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Facepunch/webrcon"
+    "url": "https://github.com/BeigeAnimal/BeatSaberRcon"
   },
   "scripts": {
-    "server": "http-server -p 8888",
+    "server": "https-server -p 8888",
     "start": "npm run server"
   },
   "devDependencies": {
