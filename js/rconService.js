@@ -16,7 +16,7 @@ function RconService() {
   var LastIndex = 1001;
 
   Service.Connect = function(addr, pass) {
-    this.Socket = new WebSocket("w://" + addr + "/" + pass);
+    this.Socket = new WebSocket("ws://" + addr + "/" + pass);
     this.Address = addr;
 
     this.Socket.onmessage = function(e) {
